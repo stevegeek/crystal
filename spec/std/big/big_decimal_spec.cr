@@ -252,6 +252,10 @@ describe BigDecimal do
     end
 
     expect_raises(InvalidBigDecimalException) do
+      BigDecimal.new("1e1e")
+    end
+
+    expect_raises(InvalidBigDecimalException) do
       BigDecimal.new("1 e1")
     end
 
@@ -293,6 +297,10 @@ describe BigDecimal do
 
     expect_raises(InvalidBigDecimalException) do
       BigDecimal.new("1e+")
+    end
+
+    expect_raises(InvalidBigDecimalException) do
+      BigDecimal.new("1.1e-")
     end
 
     expect_raises(InvalidBigDecimalException) do
